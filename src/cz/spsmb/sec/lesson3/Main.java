@@ -2,6 +2,7 @@ package cz.spsmb.sec.lesson3;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.Random;
 
 public class Main {
@@ -27,19 +28,24 @@ public class Main {
 
         Person personWithMinSalary = PersonFilterUtils.findMinSalary(personList);
         Person personWithMinSalary2 = PersonFilterUtils.findMinSalaryWithJavaStreamAPI(personList);
-        //System.out.println(personWithMinSalary2);
+        System.out.println(personWithMinSalary);
+        System.out.println(personWithMinSalary2);
 
-        //System.out.println(PersonFilterUtils.sortPersonsByName(personList));
+        System.out.println(PersonFilterUtils.sortPersonsByName(personList));
 
-        //System.out.println(PersonFilterUtils.filterAdultPersons(personList));
-        //System.out.println(PersonFilterUtils.filterAdultPersonsWithJavaStreamAPI(personList));
+        System.out.println(PersonFilterUtils.filterAdultPersons(personList));
+        System.out.println(PersonFilterUtils.filterAdultPersonsWithJavaStreamAPI(personList));
 
-        //System.out.println(PersonFilterUtils.countSumOfSalary(personList));
-        //System.out.println(PersonFilterUtils.countSumOfSalaryWithJavaStreamAPI(personList));
+        System.out.println(PersonFilterUtils.countSumOfSalary(personList));
+        System.out.println(PersonFilterUtils.countSumOfSalaryWithJavaStreamAPI(personList));
 
         System.out.println(PersonFilterUtils.addHelloToEachName(personList));
         System.out.println(PersonFilterUtils.addHelloToEachNameWithJavaStreamAPI(personList));
 
+        Map<Integer, List<Person>> groupedPersons = PersonFilterUtils.groupPersonsByAge(personList);
+        Map<Integer, List<Person>> groupedPersons2 = PersonFilterUtils.groupPersonsByAge(personList);
+        System.out.println(groupedPersons);
+        System.out.println(groupedPersons2);
     }
 
 

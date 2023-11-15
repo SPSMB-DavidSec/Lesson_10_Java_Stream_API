@@ -1,8 +1,6 @@
 package cz.spsmb.sec.lesson3;
 
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class PersonFilterUtils {
@@ -55,24 +53,39 @@ public class PersonFilterUtils {
         return personList.stream().map(Person::getSalary).reduce(Integer::sum).get();
     }
 
-    public static List<String> addHelloToEachName(List<Person> personList){
+    public static List<String> addHelloToEachName(List<Person> personList) {
         List<String> helloList = new ArrayList<>();
-        for (Person person: personList){
+        for (Person person : personList) {
             String name = "Hello " + person.getName();
             helloList.add(name);
         }
         return helloList;
     }
 
-    public static List<String> addHelloToEachNameWithJavaStreamAPI(List<Person> personList){
+    public static List<String> addHelloToEachNameWithJavaStreamAPI(List<Person> personList) {
         return personList.stream().map(p -> String.format("Hello %s", p.getName()))
                 .collect(Collectors.toList());
     }
 
 
+    public static Map<Integer, List<Person>> groupPersonsByAge(List<Person> personList) {
+        Map<Integer, List<Person>> map = new HashMap<>();
 
+        for (Person person : personList) {
+            if (!map.containsKey(person.getAge())) {
+                map.put(person.getAge(), new ArrayList<>());
+            }
+        }
 
-
-
-
+        for (Person person : personList) {
+            Integer age = person.getAge();
+            map.get(age).add(person);
+        }
+        return map;
     }
+
+
+    public static Map<Integer, List<Person>> groupPersonsByAgeWithJavaStreamAPI(List<Person> personList) {
+        return personList.stream().collect(Collectors.groupingBy(Person::getAge));
+    }
+}
