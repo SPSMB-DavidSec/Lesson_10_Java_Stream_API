@@ -1,3 +1,3 @@
-#Java Stream API
+# Java Stream API
 
 ![Java stream cheatsheet](cheatsheet.png)
