@@ -6,6 +6,7 @@
 - vytvořte getry a setry pro všechny atributy
 - vytvořte *toString()* metodu, která vypíše hodnoty pro každou instanci.
 - Vytovořte cca 10 instancí třídy Person a uložte je do kolekce List<Person>.
+![Java stream cheatsheet](person.class.jpg)
 
 ## Implementujte zadané funkce a následně zkuste vytovřit stejnou funkcionalitu pomocí Java Stream API:
 - Vytvorte funkci, která projde seznam všech osob a vypíše osobu s nejnižším platem. *stream().min()*
